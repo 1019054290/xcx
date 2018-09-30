@@ -1,0 +1,7 @@
+<view>
+  <view class='picture'>
+    <image src='{{detail.imgUrl}}'></image>
+  </view>
+  <view class='fontSize price'>商品价格：{{detail.price}}</view>
+  <view class='fontSize'>商品介绍：{{detail.detail}}</view>
+</view>

@@ -1,0 +1,89 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view> -->
+  <scroll-view>
+    <view class='imgStyle'>
+      <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{imgUrls}}" wx:key="*this">
+          <swiper-item>
+            <image src="{{item}}" class="slide-image" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class='navContainer'>
+      <view class='navList'>
+        <view class='navItem'>
+          <view class='loalImgstyle'>
+            <image src='../../common/image/chaoshi.png'></image>
+          </view>
+        GO超市
+        </view>
+        <view class='navItem'>
+          <view class='loalImgstyle'>
+            <image src='../../common/image/lvxing.png'></image>
+          </view>
+        GO旅行
+        </view>
+        <view class='navItem'>
+          <view class='loalImgstyle'>
+            <image src='../../common/image/yifu.png'></image>
+          </view>
+        GO服饰</view>
+        <view class='navItem'>
+          <view class='loalImgstyle'>
+            <image src='../../common/image/shengxian.png'></image>
+          </view>
+        GO生鲜</view>
+        <view class='navItem'>
+          <view class='loalImgstyle'>
+            <image src='../../common/image/daojia.png'></image>
+          </view>
+        GO到家</view>
+      </view>
+      <view class='navList'>
+        <view class='navItem'>
+          <view class='loalImgstyle'>
+            <image src='../../common/image/chongzhi.png'></image>
+          </view>
+        充值缴费</view>
+        <view class='navItem'>
+          <view class='loalImgstyle'>
+            <image src='../../common/image/jingdou.png'></image>
+          </view>
+        Go豆</view>
+        <view class='navItem'>
+          <view class='loalImgstyle'>
+            <image src='../../common/image/lingjuan.png'></image>
+          </view>
+        领卷</view>
+        <view class='navItem'>
+          <view class='loalImgstyle'>
+            <image src='../../common/image/jieqian.png'></image>
+          </view>
+        借钱</view>
+        <view class='navItem'>
+          <view class='loalImgstyle'>
+            <image src='../../common/image/huiyuan.png'></image>
+          </view>
+        PLUS会员</view>
+      </view>
+    </view>
+    <view class='dressArea'>
+      <view class='area'>推荐专区</view>
+      <view class='dressAreaContainer'>
+          <view class='dressAreaItem' wx:for="{{dressAreaList}}" wx:key="*this" wx:for-item="items">
+            <view>
+              <image src='{{items.imgUrl}}'></image>
+            </view>
+          </view>
+        </view>
+    </view>
+  </scroll-view>
+</view>

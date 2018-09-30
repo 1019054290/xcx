@@ -1,0 +1,31 @@
+<view>
+<scroll-view scroll-y class='body-v'>
+  <view class='content' wx:for="{{shoppingList}}" wx:for-index="indexs" wx:for-item="itemDetail" wx:key="itemDetail">
+    <view class='radioStyle'>
+    <checkbox-group bindchange="danxuan" data-indexs='{{indexs}}'>
+      <checkbox value='{{itemDetail.price}}' checked='{{itemDetail.checked}}'></checkbox>
+    </checkbox-group>
+    </view>
+    <view class='detail' data-item='{{itemDetail}}' bindtap='lookDetail'>
+      <view class='imgStyle'>
+        <image src='{{itemDetail.imgUrl}}'></image>
+      </view>
+      <view class='imgRight'>
+        <view>促销价：${{itemDetail.price}}</view>
+        <view>{{itemDetail.detail}}</view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<view class='bootomStyle'>
+  <view style='padding-left:14px'>
+  <checkbox-group bindchange='allChecked'>
+    <checkbox value='allCheckeds' checked='{{allCheckeds}}'>全选</checkbox>
+    <view style='padding-left:10px'>合计：¥{{allCount}}</view>
+  </checkbox-group>
+  </view>
+  <view class='jiesuan' bindtap='settlement'>
+    结算({{allCount}})元
+  </view>
+</view>
+</view>

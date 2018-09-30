@@ -1,0 +1,90 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+.mapStyle{
+  width: 700rpx;
+  height: 600rpx;
+}
+.imgStyle{
+  width: 100%;
+  height: 200px;
+}
+.imgStyle swiper{
+  width: 100%;
+  height: 100%;
+}
+.slide-image{
+  width: 100%;
+  height: 100%;
+}
+.navList{
+  display: flex;
+  width: 96%;
+  height: 70px;
+  margin-left: 2%;
+  border: 1px solid #f9f9f9;
+  border-radius: 4px;
+}
+.navList:first-of-type{
+  border-bottom: none
+}
+.navList view{
+  font-size: 12px
+}
+.navItem{
+  width: 20%;
+  text-align: center;
+  padding-top: 8px;
+  border-right: 1px solid #f9f9f9;
+}
+.navList .navItem:last-of-type{
+  border-right: none;
+}
+.loalImgstyle{
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+}
+.loalImgstyle image{
+  width: 100%;
+  height: 100%;
+}
+.area{
+  line-height: 40px;
+  font-size: 14px;
+  text-align: center;
+  border-bottom:2px solid #f9f9f9;
+}
+.dressAreaItem{
+  display: inline-block;
+  width: 47%;
+  height: 200px;
+  margin-left: 2%;
+  padding: 5px 0px;
+  /* border: 1px solid red; */
+}
+.dressAreaItem image{
+  width: 100%;
+  height: 200px;
+}
+.dressAreaContainer{
+  padding-top: 5px;
+}
