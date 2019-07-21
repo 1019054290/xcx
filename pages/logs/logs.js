@@ -11,7 +11,7 @@ Page({
     shoppingList:[{
       id:1,imgUrl:"http://img.alicdn.com/bao/uploaded/TB1Vi60XcXIxuRkSRTgXXbWhXXa_!!0-item_pic.jpg_300x300.jpg",
       checked:false,
-      price:338,
+      price:33833,
       trueOrFalse:0,
       detail:"千纸鹤男装2018春秋季新款男士飞行员休闲夹克秋装棒球服外套男潮"
     }, {
@@ -83,6 +83,43 @@ Page({
       })
     })
   },
+  //下拉刷新
+  onPullDownRefresh: function () {
+    wx.showNavigationBarLoading()
+    wx.showLoading({
+      title: '正在加载中'
+    })
+    let newList = this.data.shoppingList.reverse()
+    setTimeout(() => {
+      this.setData({
+        shoppingList: newList
+      })
+      wx.hideNavigationBarLoading() //完成停止加载
+      wx.stopPullDownRefresh() //停止下拉刷新
+      wx.hideLoading();
+    }, 2000)
+
+  },
+  //上拉加载
+  onReachBottom:function(){
+    wx.showNavigationBarLoading()
+    wx.showLoading({
+      title: '正在加载中'
+    })
+    let newList=[];
+    for(var i=0;i<2;i++){
+      for( var item of this.data.shoppingList){
+        newList.push(item)
+      }
+    }
+    setTimeout(() => {
+      this.setData({
+        shoppingList: newList
+      })
+      wx.hideNavigationBarLoading() //完成停止加载
+      wx.hideLoading();
+    }, 2000)
+  },
   lookDetail: function (e){
     let itemDetail=e.currentTarget.dataset.item;
     wx.navigateTo({
@@ -93,6 +130,7 @@ Page({
     var index=e.currentTarget.dataset.indexs;
     var tof="shoppingList["+index+"].trueOrFalse";
     var tofJian = this.data.shoppingList[index].price;
+    console.log(e)
     if (e.detail.value!=""){
      this.setData({
        [tof]:1
@@ -117,6 +155,7 @@ Page({
     this.setData({
       allCount: 0
     })
+    console.log(e)
     if (e.detail.value == '') {
       for (var i = 0; i < this.data.shoppingList.length; i++) {
         var str = 'shoppingList[' + i + '].checked'
